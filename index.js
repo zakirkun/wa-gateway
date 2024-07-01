@@ -33,6 +33,10 @@ server.on("listening", () => console.log("APP IS RUNNING ON PORT " + PORT));
 
 server.listen(PORT);
 
+whatsapp.onMessageReceived((msg) => {
+  console.log(`New Message Received On Session: ${msg.sessionId} >>>`, msg);
+});
+
 whatsapp.onConnected((session) => {
   console.log("connected => ", session);
 });
